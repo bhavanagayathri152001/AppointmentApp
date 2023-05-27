@@ -1,0 +1,126 @@
+.bg-container {
+  background-image: linear-gradient(to top, #fbc7d4, #9796f0);
+  max-width: 100vw;
+  margin: 40px;
+  padding: 40px;
+  box-shadow: 0 2px 2px rgb(201, 198, 198);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .bg-container {
+    min-width: 50vw;
+  }
+}
+
+.appointment-container {
+  background-color: #ffffff;
+  max-width: 65vw;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .appointment-container {
+    max-width: 40vw;
+  }
+}
+
+.heading {
+  font-family: 'Roboto';
+  font-size: 35px;
+  font-weight: 700;
+  color: #171f46;
+}
+
+.appointment-top-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.inputs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.label-text {
+  font-family: 'Roboto';
+  font-size: 10px;
+}
+
+.input-text {
+  height: 40px;
+  width: 250px;
+  background-color: #ffffff;
+  border: 1px solid rgb(146, 144, 144);
+  border-radius: 3px;
+  outline: none;
+  margin-bottom: 15px;
+  font-family: 'Roboto';
+  font-size: 12px;
+  color: #282a35;
+  padding-left: 10px;
+}
+
+.add-btn {
+  background-color: #8b5cf6;
+  height: 40px;
+  width: 80px;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .appointment-image-container {
+    display: none;
+  }
+}
+
+.appointment-image {
+  height: 200px;
+  width: 350px;
+  padding-left: 30px;
+  padding-bottom: 10px;
+}
+.appointment {
+  font-family: 'Roboto';
+  font-size: 20px;
+  font-weight: 700;
+  color: #171f46;
+}
+
+.appointment-stared-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.stared-btn {
+  height: 25px;
+  width: 70px;
+  font-family: 'Roboto';
+  font-size: 13px;
+  color: #171f46;
+  background-color: transparent;
+  border: 1px solid #171f46;
+  border-radius: 15px;
+  margin-top: 10px;
+  cursor: pointer;
+  outline: none;
+}
+
+.ul-container {
+  max-width: 90vw;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding-left: 0;
+}
