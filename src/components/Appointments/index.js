@@ -5,7 +5,12 @@ import AppointmentItem from '../AppointmentItem'
 import './index.css'
 
 class Appointments extends Component {
-  state = {appointmentList: [], titleInput: '', dateInput: ''}
+  state = {
+    appointmentList: [],
+    titleInput: '',
+    dateInput: '',
+    isToggleStar: true,
+  }
 
   onChangeTitle = event => {
     this.setState({titleInput: event.target.value})
@@ -49,17 +54,27 @@ class Appointments extends Component {
     })
   }
 
-  onClickStaredBtn = () => {
-    const {appointmentList} = this.state
-    this.setState({
-      appointmentList: appointmentList.filter(
-        eachAppointment => eachAppointment.isActiveStar === true,
-      ),
-    })
+  toggledStaredBtn = () => {
+    this.setState(prevState => ({
+      isToggleStar: !prevState.isToggleStar,
+    }))
   }
 
   render() {
-    const {titleInput, dateInput, appointmentList} = this.state
+    const {titleInput, dateInput, appointmentList, isToggleStar} = this.state
+
+    let filteredResults
+
+    if (isToggleStar === true) {
+      filteredResults = appointmentList
+    } else {
+      filteredResults = appointmentList.filter(
+        eachAppointment => eachAppointment.isActiveStar === true,
+      )
+    }
+
+    const blueBtn = !isToggleStar ? 'blue-btn' : ''
+
     return (
       <div className="bg-container">
         <div className="appointment-container">
@@ -113,14 +128,14 @@ class Appointments extends Component {
               <h1 className="appointment">Appointments</h1>
               <button
                 type="button"
-                className="stared-btn"
-                onClick={this.onClickStaredBtn}
+                className={`stared-btn ${blueBtn}`}
+                onClick={this.toggledStaredBtn}
               >
                 Starred
               </button>
             </div>
             <ul className="ul-container">
-              {appointmentList.map(eachAppointment => (
+              {filteredResults.map(eachAppointment => (
                 <AppointmentItem
                   toggleStarButton={this.toggleStarButton}
                   appointmentList={eachAppointment}
