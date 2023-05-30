@@ -115,6 +115,11 @@
   outline: none;
 }
 
+.blue-btn {
+  background-color: #8b5cf6;
+  color: #ffffff;
+}
+
 .ul-container {
   max-width: 90vw;
   list-style-type: none;
